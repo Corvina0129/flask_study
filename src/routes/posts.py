@@ -34,7 +34,7 @@ def all_posts():
 
 
 @posts.route('/<int:id>', methods=['DELETE'])
-def remove_post():
+def remove_post(id):
     post = Post.query.get(id)
     db.session.delete(post)
     db.session.commit()
